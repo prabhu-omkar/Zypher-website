@@ -1,0 +1,287 @@
+/*
+ * Zypher site tokens.
+ *
+ * Light values are the desktop app's own (frontend/src/index.css) so the site
+ * and the product read as one thing. Dark values are derived from the same
+ * hues: the accent is lifted until it clears contrast on the dark canvas.
+ */
+@import '@fontsource-variable/inter';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+@import 'tailwindcss';
+
+:root {
+  --canvas: #f6f7f9;
+  --surface: #ffffff;
+  --surface-sunken: #eef0f4;
+  --line: #e3e6eb;
+  --line-strong: #cfd4dc;
+
+  --ink: #16181d;
+  --ink-soft: #4a4f5a;
+  --ink-muted: #676d7a;
+
+  --accent: #3d4ed8;
+  --accent-hover: #3342c4;
+  --accent-soft: #eef0fe;
+  --accent-line: #c9cff9;
+
+  --solid: #16181d;
+  --solid-hover: #2c3038;
+  --on-solid: #ffffff;
+
+  --critical: #c42b21;
+  --high: #b1520a;
+  --medium: #97690a;
+  --low: #12784a;
+
+  --shadow-sm: 0 1px 2px rgba(19, 24, 38, 0.05), 0 1px 3px rgba(19, 24, 38, 0.04);
+  --shadow-lg: 0 4px 8px rgba(19, 24, 38, 0.04), 0 12px 32px rgba(19, 24, 38, 0.1);
+  --shadow-pop: 0 8px 16px rgba(19, 24, 38, 0.06), 0 30px 70px rgba(19, 24, 38, 0.16);
+
+  --glow: rgba(61, 78, 216, 0.1);
+  --inverse: #16181d;
+  --on-inverse: #f6f7f9;
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  --canvas: #0c0e12;
+  --surface: #14171d;
+  --surface-sunken: #101318;
+  --line: #242832;
+  --line-strong: #323845;
+  --ink: #eceef2;
+  --ink-soft: #b3b8c3;
+  --ink-muted: #8d93a0;
+  --accent: #8b97ff;
+  --accent-hover: #a2acff;
+  --accent-soft: #1a1e36;
+  --accent-line: #33397a;
+  --solid: #eceef2;
+  --solid-hover: #ffffff;
+  --on-solid: #0c0e12;
+  --critical: #ff7a70;
+  --high: #f59e4a;
+  --medium: #e8bd4a;
+  --low: #4fd08e;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --shadow-pop: 0 30px 70px rgba(0, 0, 0, 0.55);
+  --glow: rgba(139, 151, 255, 0.12);
+  --inverse: #1c2031;
+  --on-inverse: #eceef2;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --canvas: #0c0e12;
+    --surface: #14171d;
+    --surface-sunken: #101318;
+    --line: #242832;
+    --line-strong: #323845;
+    --ink: #eceef2;
+    --ink-soft: #b3b8c3;
+    --ink-muted: #8d93a0;
+    --accent: #8b97ff;
+    --accent-hover: #a2acff;
+    --accent-soft: #1a1e36;
+    --accent-line: #33397a;
+    --solid: #eceef2;
+    --solid-hover: #ffffff;
+    --on-solid: #0c0e12;
+    --critical: #ff7a70;
+    --high: #f59e4a;
+    --medium: #e8bd4a;
+    --low: #4fd08e;
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.45);
+    --shadow-pop: 0 30px 70px rgba(0, 0, 0, 0.55);
+    --glow: rgba(139, 151, 255, 0.12);
+    --inverse: #1c2031;
+    --on-inverse: #eceef2;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', monospace;
+
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-sunken: var(--surface-sunken);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-muted: var(--ink-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-line: var(--accent-line);
+  --color-solid: var(--solid);
+  --color-solid-hover: var(--solid-hover);
+  --color-on-solid: var(--on-solid);
+  --color-inverse: var(--inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-critical: var(--critical);
+  --color-high: var(--high);
+  --color-medium: var(--medium);
+  --color-low: var(--low);
+
+  --shadow-soft: var(--shadow-sm);
+  --shadow-lift: var(--shadow-lg);
+  --shadow-pop: var(--shadow-pop);
+
+  /* One radius system: controls 10px, panels 16px, interactive pills full. */
+  --radius-ctl: 10px;
+  --radius-panel: 16px;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--canvas);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Grain lives on a fixed, non-interactive layer so it never repaints on scroll. */
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Ambient accent glow behind the hero, the same device the film uses. */
+.hero-glow {
+  background:
+    radial-gradient(60% 55% at 72% 42%, var(--glow), transparent 70%),
+    radial-gradient(40% 40% at 10% 0%, var(--glow), transparent 70%);
+}
+
+/* Canvas-coloured pool behind the centred hero copy, over the globe. */
+.hero-veil {
+  background:
+    radial-gradient(
+      44% 34% at 50% 50%,
+      color-mix(in oklab, var(--canvas) 86%, transparent) 0%,
+      color-mix(in oklab, var(--canvas) 55%, transparent) 55%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, transparent 70%, var(--canvas) 100%);
+}
+
+/* Code should show the characters typed: no "==" or "->" ligatures. */
+.font-mono,
+code,
+pre {
+  font-variant-ligatures: none;
+  font-feature-settings: 'liga' 0, 'calt' 0;
+}
+
+/* Tailwind v4 resets buttons to the default cursor; every button here acts. */
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Range inputs styled to the token set. */
+input[type='range'].zr {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 28px;
+  background: transparent;
+  cursor: pointer;
+}
+input[type='range'].zr::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0 var(--fill, 50%),
+    var(--line-strong) var(--fill, 50%) 100%
+  );
+}
+input[type='range'].zr::-moz-range-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+input[type='range'].zr::-moz-range-progress {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+input[type='range'].zr::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  box-shadow: var(--shadow-sm);
+  transition: transform 160ms var(--ease-out-expo);
+}
+input[type='range'].zr:active::-webkit-slider-thumb {
+  transform: scale(1.15);
+}
+input[type='range'].zr::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+}
+
+/* Ecosystem logos are drawn as masks so they take the ink colour in both themes. */
+.logo-mask {
+  background-color: currentColor;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
