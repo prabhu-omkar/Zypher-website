@@ -12,14 +12,6 @@
 
 ---
 
-## Table of Contents
-- [Overview](#overview) • [Live Demo](#live-demo) • [Key Features](#key-features)
-- [Architecture & Tech Stack](#architecture--tech-stack) • [Directory Structure](#project-directory-structure)
-- [Getting Started](#getting-started) • [Engineering Deep-Dive](#core-engineering-deep-dive)
-- [Accessibility](#accessibility--motion-design) • [CI/CD](#cicd--deployment) • [Verification](#release-process--verification)
-
----
-
 ## Overview
 
 Modern software ecosystems rely heavily on cryptographic algorithms that will become vulnerable to Cryptanalytically Relevant Quantum Computers (CRQCs). Migrating away from RSA, ECC, and classical Diffie-Hellman requires complete visibility into legacy codebases, binary dependencies, and configuration files.
